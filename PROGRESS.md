@@ -12,17 +12,17 @@
 - **セキュリティ**: ZeroClawの deny-by-default アクセス制御をベースに
 - **コスト方針**: Claude APIの従量課金は避ける。使うとしても設計・レビューに限定し、月間上限を設定
 - **Claude API**: 使うならSonnet、Anthropicコンソールで月間上限$15-20。ただし「使わない」選択肢も残っており、最終判断は実機検証後
+- **モデル**: onboardデフォルトの `gpt-5-codex` で動作確認済み（事前調査では `gpt-5.4` を想定していたが、実際の設定値は `gpt-5-codex`）
 
 ## 決まっていないこと
 
-- **具体的なモデル**: gpt-5.4がメイン候補だが、gpt-5.4-miniが使えるかは実機検証で確認予定
+- （現時点ではなし）
 
 ## 次にやること
 
-1. **実機検証** — セットアップ手順（[00-pre-research/11-setup-guide](notes/00-pre-research/11-setup-guide/)）のPhase 1〜3に沿って実行:
-   - Phase 1: ZeroClawインストール + Codex OAuth + 最小構成で動作確認
-   - Phase 2: Discord Bot作成 + チャネル統合
-   - Phase 3: model_routes + query_classification の設定
+1. **Discord Bot設定の振り返り** — Developer Portal側の設定（Intent、権限など）を整理・記録する
+2. **認証フォールバック手順の記録** — SSH経由でのdevice-codeフローの正確な手順をメモする
+3. **Phase 3: model_routes + query_classification の設定** — セットアップ手順に沿って実行
 
 ## まだ気になっていること
 
@@ -32,6 +32,7 @@
 ## ノート
 
 - [00-pre-research/](notes/00-pre-research/) — 事前調査フェーズ（2026-03-21〜03-24、ノート01〜11）
+- [01-hands-on/](notes/01-hands-on/) — 実機検証フェーズ（2026-03-28〜）
 
 ## 運用ルール
 
@@ -40,4 +41,4 @@
 - 過去ログ → [meta/progress/](meta/progress/)
 
 ---
-*最終更新: 2026-03-25（実機検証フェーズ向けにリフレッシュ）*
+*最終更新: 2026-03-28（PROGRESS見直し: モデル確定を反映）*
